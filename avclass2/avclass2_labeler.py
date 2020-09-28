@@ -200,6 +200,7 @@ def main(args):
                 # Collect stats
                 # FIX: should iterate once over tags, 
                 # for both stats and aliasdetect
+                print(tags)
                 if tags:
                     stats["tagged"] += 1
                     if args.stats:

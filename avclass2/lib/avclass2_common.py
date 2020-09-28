@@ -633,4 +633,10 @@ class AvLabels:
         pairs = ((t, len(avs)) for (t,avs) in av_dict.items() 
                     if len(avs) > threshold)
         return sorted(pairs, key=itemgetter(1,0), reverse=True)
+    def rank_tags_with_av(self, av_dict, threshold=1):
+        ''' Return list of (tag, confidence) ranked by decreasing confidence 
+            and filter tags with less or equal threshold confidence '''
+
+        pairs = ((t, avs) for (t,avs) in av_dict.items() if len(avs) > threshold)
+        return sorted(pairs, key=itemgetter(1,0), reverse=True)
 
